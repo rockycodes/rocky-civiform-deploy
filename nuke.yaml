@@ -1,0 +1,20 @@
+regions:
+  - us-east-1
+  - global
+
+account-blocklist:
+  - "098472360576" # amazon@exygy.com management account
+  - "559421412203" # CiviForm sub account
+  - "496466114051" # Doorway AWS account
+  - "305584670637" # CiviForm staging
+
+accounts:
+  "423872842560": # my dev account
+    filters:
+      ACMCertificate:
+        - property: "DomainName"
+          value: "rfine-dev.civiform.dev"
+      IAMRole:
+        - "OrganizationAccountAccessRole"
+      IAMRolePolicyAttachment:
+        - "OrganizationAccountAccessRole -> AdministratorAccess"
